@@ -2,10 +2,9 @@
 	color : black;
 }
 
-tr{
-	border-bottom: 1px solid black;
-}
-
-.groupName{
-	border-bottom: 2px solid black;
+.groupBorderCell{
+	padding: 0px;
+	margin: 0px;
+	height: min-content;
+	border-bottom: 2px solid #e6e6e6;
 }
