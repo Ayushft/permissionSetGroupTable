@@ -1,3 +1,10 @@
+<!--
+  @description       : 
+  @author            : Ayush Kothari
+  @group             : 
+  @last modified on  : 02-25-2025
+  @last modified by  : Ayush Kothari
+-->
 <template>
     <template lwc:if={permissionRows}>
         <table class="slds-table slds-table_cell-buffer slds-table_bordered ">
@@ -16,13 +23,8 @@
             </thead>
             <tbody>
             <template for:each={processTableData} for:item="row">
-                <!-- <tr key={row.Id}>
-                    <td>{row.permissionSetGroupLabel}</td>
-                    <td>{row.permissionSetName}</td>
-                    <td>{row.permissionSetLicenseName}</td>
-                </tr> -->
 
-                <tr key={row.permissionSetGroupLabel} class="slds-hint-parent groupName">
+                <tr key={row.permissionSetGroupLabel} class="slds-hint-parent">
                     <td key={row.permissionSetGroupLabel} rowspan={row.rowspan}>
                         {row.permissionSetGroupLabel}
                     </td>
@@ -37,6 +39,9 @@
                         </td>
                     </tr>
                 </template>
+                <tr key={row.permissionSetGroupLabel}>
+                    <td key={row.permissionSetGroupLabel} class="groupBorderCell" colspan="3"></td>
+                </tr>
             </template>
             </tbody>
         </table>
