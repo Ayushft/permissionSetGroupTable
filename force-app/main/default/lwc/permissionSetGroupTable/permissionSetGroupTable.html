@@ -1,0 +1,44 @@
+<template>
+    <template lwc:if={permissionRows}>
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered ">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="">Permission Set Group</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="">Permission Set</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="">License</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+            <template for:each={processTableData} for:item="row">
+                <!-- <tr key={row.Id}>
+                    <td>{row.permissionSetGroupLabel}</td>
+                    <td>{row.permissionSetName}</td>
+                    <td>{row.permissionSetLicenseName}</td>
+                </tr> -->
+
+                <tr key={row.permissionSetGroupLabel} class="slds-hint-parent groupName">
+                    <td key={row.permissionSetGroupLabel} rowspan={row.rowspan}>
+                        {row.permissionSetGroupLabel}
+                    </td>
+                </tr>
+                <template for:each={row.rows} for:item="rowDetails">
+                    <tr key={rowDetails.Id} >
+                        <td key={rowDetails.Id} data-label="family">
+                            {rowDetails.permissionSetName}
+                        </td>
+                        <td key={rowDetails.Id} data-label="family">
+                            {rowDetails.permissionSetLicenseName}
+                        </td>
+                    </tr>
+                </template>
+            </template>
+            </tbody>
+        </table>
+    </template>
+</template>

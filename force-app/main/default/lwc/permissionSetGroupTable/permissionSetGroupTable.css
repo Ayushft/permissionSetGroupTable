@@ -1,0 +1,11 @@
+.custom-container{
+	color : black;
+}
+
+tr{
+	border-bottom: 1px solid black;
+}
+
+.groupName{
+	border-bottom: 2px solid black;
+}
